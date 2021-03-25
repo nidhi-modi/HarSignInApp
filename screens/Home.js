@@ -75,6 +75,12 @@ export default class Home extends Component {
 
           </View>
 
+          <View style={styles.marginDimensionTop} />
+
+          <View style={styles.emptyView} />
+
+
+
         </View>
 
       </ScrollView>
@@ -94,6 +100,13 @@ const styles = StyleSheet.create({
   marginDimensionTop: {
 
     marginTop: 18,
+
+  },
+
+  emptyView: {
+
+    borderBottomColor: '#dedede',
+    borderBottomWidth: 1,
 
   },
 
