@@ -35,7 +35,7 @@ export default class Home extends Component {
   render() {
     return (
 
-      <ScrollView keyboardShouldPersistTaps='handled'>
+      <ScrollView>
 
         <Image
           style={{ width: width, height: 500 }}
