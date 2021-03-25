@@ -55,6 +55,9 @@ export default class Home extends Component {
 
             </TouchableOpacity>
 
+            <View style={styles.marginDimensionTop} />
+
+
             <TouchableOpacity>
 
               <View style={styles.button}>
@@ -94,12 +97,20 @@ const styles = StyleSheet.create({
 
   },
 
+  marginDimensionRight: {
+
+    marginRight: 18,
+
+  },
+
   formContainer: {
 
     //backgroundColor: 'rgba(192,192,192,0.55)',
     //borderRadius: 5,
     padding: 5,
+    paddingRight: 10,
     margin: 10,
+    marginRight: 10,
     height: '100%',
     width: '100%'
 
@@ -109,7 +120,7 @@ const styles = StyleSheet.create({
 
     flexDirection: "row",
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-around'
 
   },
 
@@ -118,7 +129,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2C903D',
     borderRadius: 25,
     flex: 1,
-    height: 65,
+    height: 75,
     justifyContent: 'center',
     alignItems: 'center',
     width: 300
@@ -129,7 +140,7 @@ const styles = StyleSheet.create({
   buttonText: {
 
     color: 'white',
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold'
   }
 
