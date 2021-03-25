@@ -18,19 +18,10 @@ export default class Home extends Component {
     super(props);
     this.state = {
 
-      modalVisible: false,
-      userSelected: [],
-      data: [
-        { id: 1, name: "Sign In", image: "https://img.icons8.com/clouds/100/000000/employee-card.png" },
-        { id: 2, name: "Site Map", image: "https://img.icons8.com/color/100/000000/real-estate.png" },
 
-      ]
     };
   }
 
-  clickEventListener = (item) => {
-    Alert.alert('Message', 'Item clicked. ' + item.name);
-  }
 
   render() {
     return (
@@ -43,28 +34,44 @@ export default class Home extends Component {
           source={require('../assets/tandgImage.jpg')}
         />
 
-        <View style={styles.container}>
-          <FlatList
-            style={styles.contentList}
-            columnWrapperStyle={styles.listContainer}
-            data={this.state.data}
-            keyExtractor={(item) => {
-              return item.id;
-            }}
-            renderItem={({ item }) => {
-              return (
-                <TouchableOpacity style={styles.card} onPress={() => { this.clickEventListener(item) }}>
-                  <Image style={styles.image} source={{ uri: item.image }} />
-                  <View style={styles.cardContent}>
-                    <Text style={styles.name}>{item.name}</Text>
-                    <Text style={styles.count}>{item.count}</Text>
-                    <TouchableOpacity style={styles.followButton} onPress={() => this.clickEventListener(item)}>
-                      <Text style={styles.followButtonText}>Explore now</Text>
-                    </TouchableOpacity>
-                  </View>
-                </TouchableOpacity>
-              )
-            }} />
+        <View style={styles.formContainer}>
+
+          <View style={styles.marginDimensionTop} />
+
+          <View style={styles.rowButton}>
+
+            <TouchableOpacity>
+
+              <View style={styles.button}>
+
+                <Text style={styles.buttonText}>
+
+                  Visitor Sign In
+
+                </Text>
+
+              </View>
+
+
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+
+              <View style={styles.button}>
+
+                <Text style={styles.buttonText}>
+
+                  Site Map
+
+                </Text>
+
+              </View>
+
+
+            </TouchableOpacity>
+
+          </View>
+
         </View>
 
       </ScrollView>
@@ -77,78 +84,53 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
 
   container: {
+
     flex: 1,
   },
 
-  container: {
-    flex: 1,
-    marginTop: 20,
-    backgroundColor: "#ebf0f7"
-  },
-  contentList: {
-    flex: 1,
-  },
-  cardContent: {
-    marginLeft: 20,
-    marginTop: 10
-  },
-  image: {
-    width: 90,
-    height: 90,
-    borderRadius: 45,
-    borderWidth: 2,
-    borderColor: "#ebf0f7"
+  marginDimensionTop: {
+
+    marginTop: 18,
+
   },
 
-  card: {
-    shadowColor: '#00000021',
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
-    shadowOpacity: 0.37,
-    shadowRadius: 7.49,
-    elevation: 12,
+  formContainer: {
 
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 20,
-    backgroundColor: "white",
-    padding: 10,
-    flexDirection: 'row',
-    borderRadius: 30,
+    //backgroundColor: 'rgba(192,192,192,0.55)',
+    //borderRadius: 5,
+    padding: 5,
+    margin: 10,
+    height: '100%',
+    width: '100%'
+
   },
 
-  name: {
-    fontSize: 18,
-    flex: 1,
-    alignSelf: 'center',
-    color: "#3399ff",
-    fontWeight: 'bold'
+  rowButton: {
+
+    flexDirection: "row",
+    alignItems: 'center',
+    justifyContent: 'space-between'
+
   },
-  count: {
-    fontSize: 14,
+
+  button: {
+
+    backgroundColor: '#2C903D',
+    borderRadius: 25,
     flex: 1,
-    alignSelf: 'center',
-    color: "#6666ff"
-  },
-  followButton: {
-    marginTop: 10,
-    height: 35,
-    width: 100,
-    padding: 10,
-    flexDirection: 'row',
+    height: 65,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 30,
-    backgroundColor: "white",
-    borderWidth: 1,
-    borderColor: "#dcdcdc",
-  },
-  followButtonText: {
-    color: "#dcdcdc",
-    fontSize: 12,
+    width: 300
+
   },
 
+
+  buttonText: {
+
+    color: 'white',
+    fontSize: 20,
+    fontWeight: 'bold'
+  }
 
 });  
