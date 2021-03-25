@@ -21,7 +21,7 @@ export default class Home extends Component {
       modalVisible: false,
       userSelected: [],
       data: [
-        { id: 1, name: "Sign In", image: require("../assets/signInCard.png") },
+        { id: 1, name: "Sign In", image: "https://img.icons8.com/clouds/100/000000/employee-card.png" },
         { id: 2, name: "Site Map", image: "https://img.icons8.com/color/100/000000/real-estate.png" },
 
       ]
